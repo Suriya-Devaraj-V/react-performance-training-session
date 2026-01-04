@@ -32,11 +32,11 @@ This repository is built to teach practical React performance techniques through
 
 ## Workshop goals
 
-- Learn how to measure performance (browser tools, React DevTools profiler, Lighthouse, bundle analyzers).
+- Learn how to measure performance (browser tools, React DevTools profiler).
 - Diagnose render & reconciliation issues.
 - Apply optimizations: memoization, virtualization, code-splitting, lazy loading, selective rendering, web vitals improvements.
 - Understand trade-offs and anti-patterns.
-- Practice with guided exercises and real-world demo apps.
+- Practice.
 
 ---
 
@@ -52,12 +52,14 @@ This repository is built to teach practical React performance techniques through
 ## Getting started
 
 1. Clone the repo
+
    ```bash
    git clone https://github.com/Suriya-Devaraj-V/react-performance-training-session.git
    cd react-performance-training-session
    ```
 
 2. Install dependencies
+
    ```bash
    npm install
    # or
@@ -71,23 +73,6 @@ This repository is built to teach practical React performance techniques through
    npm start
    ```
 
-4. Run tests (if provided)
-   ```bash
-   npm test
-   ```
-
-5. Build for production
-   ```bash
-   npm run build
-   ```
-
-6. Analyze bundle (example)
-   ```bash
-   npm run analyze
-   ```
-
-Note: If the repository uses a specific toolchain (Vite, CRA, Next.js, etc.) follow the relevant subproject README or the commands above may need to be adjusted.
-
 ---
 
 ## Project structure
@@ -95,10 +80,6 @@ Note: If the repository uses a specific toolchain (Vite, CRA, Next.js, etc.) fol
 A typical structure used in this repo (adjust if your repo differs):
 
 - `src/` — main application source code and demo apps
-- `examples/` — small isolated examples demonstrating specific performance concepts
-- `exercises/` — guided exercises and starter/solution branches
-- `docs/` — notes, slides, or workshop materials
-- `scripts/` — helper scripts (analysis, profiling helpers)
 - `package.json` — scripts and dependencies
 
 If you open the repository you'll find one or more demo apps and exercise folders — each is self-contained and can be run independently.
@@ -115,25 +96,19 @@ The workshop is organized around practical problems and solutions:
 2. Measuring performance
    - Browser DevTools (Performance panel)
    - React DevTools Profiler
-   - Lighthouse and Web Vitals
-   - Bundle analysis
 3. Render profiling & diagnosis
    - Identifying unnecessary renders
    - Props/state change cascades
 4. Component-level optimizations
    - useMemo, useCallback, React.memo
    - Avoiding inline functions/objects where appropriate
-5. List performance
-   - Virtualization with react-window / react-virtualized
-6. Code-splitting & lazy loading
+5. Code-splitting & lazy loading
    - React.lazy, Suspense, dynamic imports
-7. Advanced React APIs
-   - useTransition, startTransition, concurrent patterns (overview)
-8. Build & delivery optimizations
+6. Build & delivery optimizations
    - Tree shaking, smaller dependencies, image & asset optimization
-9. Caching & data fetching strategies
+7. Caching & data fetching strategies
    - Client-side caches, SWR/React Query concepts
-10. Putting it together — profiling a real app & applying fixes
+8. Putting it together — profiling a real app & applying fixes
 
 ---
 
@@ -152,6 +127,7 @@ Exercises are split by difficulty:
   - Implement data fetching caching and observe effect on rendering and network usage.
 
 Each exercise should include:
+
 - A starter folder (e.g. `exercises/01-start`)
 - A solution folder (e.g. `exercises/01-solution`)
 - A brief README with steps and the expected learning outcome
@@ -170,6 +146,7 @@ Quick pointers:
 - Network panel: check resource sizes and caching headers
 
 Typical workflow:
+
 1. Reproduce the slow interaction.
 2. Profile with React DevTools to find expensive components.
 3. Use browser Performance to find layout/paint/long tasks.
@@ -200,36 +177,3 @@ Typical workflow:
 - react-window (virtualization): https://github.com/bvaughn/react-window
 - react-virtualized: https://github.com/bvaughn/react-virtualized
 - Bundle analyzer tools: `webpack-bundle-analyzer`, `source-map-explorer`
-
-(Replace or extend with any organization-specific resources or slides included in `docs/`.)
-
----
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome.
-
-- Check open issues and existing exercises before creating new work.
-- When adding exercises or examples:
-  - Add a clear README for the exercise with steps and expected outcomes.
-  - Keep commits small and focused.
-  - Include before-and-after measurements if demonstrating improvements.
-
-To propose changes:
-1. Fork the repo
-2. Create a feature branch
-3. Open a pull request with a clear description and motivation
-
----
-
-## License
-
-This repository is provided for training and educational purposes. Add a LICENSE file to declare an explicit license (e.g. MIT) if you want to allow reuse.
-
----
-
-## Contact
-
-Maintainer: Suriya-Devaraj-V
-
-If you want changes to the README (more repo-specific commands, examples, or badges), tell me what to include and I'll update the file.
