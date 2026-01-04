@@ -1,0 +1,19 @@
+.header{
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: azure;
+}
+
+.nav-header{
+    display: flex;
+    gap: 15px
+}
+
+.nav-links{
+    display: flex;
+    gap: 15px;
+}
