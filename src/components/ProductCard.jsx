@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./ProductCard.css";
 
 const ProductCard = (props) => {
@@ -38,4 +39,4 @@ const ProductCard = (props) => {
   );
 };
 
-export default ProductCard;
+export default memo(ProductCard);

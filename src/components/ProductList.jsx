@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { generateProducts } from "../mockData";
 import ProductCard from "./ProductCard";
 import "./ProductList.css";
@@ -18,29 +18,32 @@ const ProductList = () => {
     "Sports",
   ];
 
-  const addToCart = (id) => {
+  const addToCart = useCallback((id) => {
     setCartItems((prevItems) => [...prevItems, id]);
-  };
+  }, []);
 
-  const filteredProducts = products
-    .filter(
-      (product) =>
-        product.category === selectedCategory || selectedCategory === "All"
-    )
-    .sort((a, b) => {
-      switch (sortOption) {
-        case "price-asc":
-          return a.price - b.price;
-        case "price-desc":
-          return b.price - a.price;
-        case "rating-asc":
-          return a.rating - b.rating;
-        case "rating-desc":
-          return b.rating - a.rating;
-        default:
-          return 0;
-      }
-    });
+  const filteredProducts = useMemo(() => {
+    console.log("Filtering and sorting products");
+    return products
+      .filter(
+        (product) =>
+          product.category === selectedCategory || selectedCategory === "All"
+      )
+      .sort((a, b) => {
+        switch (sortOption) {
+          case "price-asc":
+            return a.price - b.price;
+          case "price-desc":
+            return b.price - a.price;
+          case "rating-asc":
+            return a.rating - b.rating;
+          case "rating-desc":
+            return b.rating - a.rating;
+          default:
+            return 0;
+        }
+      });
+  }, [selectedCategory, sortOption]);
 
   return (
     <div className="containerr">

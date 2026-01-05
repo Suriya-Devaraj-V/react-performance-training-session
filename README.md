@@ -75,12 +75,16 @@ The workshop is organized around practical problems and solutions:
      - Framework/library optimization
    - System Architecture
 2. Measuring performance (Web)
-   - Browser DevTools (Performance panel)
+   - Browser DevTools (Chrome Lighthouse)
    - React DevTools Profiler
 3. React Architecture
    - Trigger, Render & Commit
 4. Component-level optimizations
    - useMemo, useCallback, React.memo
+     - Syntax
+     - When we should use
+     - When not to use.
+     - use-cases.
    - Avoiding inline functions/objects where appropriate
 5. Code-splitting & lazy loading
    - React.lazy and Suspense.
